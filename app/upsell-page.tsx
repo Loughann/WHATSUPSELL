@@ -43,7 +43,7 @@ export default function UpsellPage() {
           </p>
           {/* CTA PRINCIPAL */}
           <a
-            href="https://checkoutwhats.netlify.app/"
+            href="https://checkoutpremium.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -94,7 +94,7 @@ export default function UpsellPage() {
             sua ÚNICA chance de ter o controle total e a paz que só a verdade pode trazer. Garanta agora!
           </p>
           <a
-            href="https://checkoutwhats.netlify.app/"
+            href="https://checkoutpremium.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
