@@ -14,26 +14,18 @@ export function MatrixBackground() {
 
     // --- Configurações ----------------------------------------------------
     const characters = "01" // Apenas 0s e 1s para o efeito binário
-    let fontSize = 20 // Tamanho da fonte inicial, será ajustado dinamicamente
+    const fontSize = 20 // Tamanho da fonte dos caracteres (aumentado para menos densidade)
     const columns = [] as number[] // Array para armazenar a posição Y de cada coluna de caracteres
     // ---------------------------------------------------------------------
-
-    /** Calcula o tamanho da fonte com base na largura da tela */
-    const getResponsiveFontSize = (width: number) => {
-      if (width < 480) return 12 // Para celulares muito pequenos
-      if (width < 768) return 16 // Para celulares e tablets menores
-      return 20 // Para tablets maiores e desktops
-    }
 
     /** Redimensiona o canvas e reinicia as colunas */
     const resize = () => {
       canvas.width = window.innerWidth
-      canvas.height = document.body.scrollHeight // Usa toda a altura do documento para cobrir páginas longas
-
-      fontSize = getResponsiveFontSize(canvas.width) // Atualiza o tamanho da fonte
-      columns.length = Math.floor(canvas.width / fontSize) // Recalcula o número de colunas
-      columns.fill(0) // Reinicializa todas as colunas no topo
-      ctx.font = `${fontSize}px monospace` // Define a fonte do contexto
+      // Usamos toda a altura do documento para cobrir páginas longas
+      canvas.height = document.body.scrollHeight
+      columns.length = Math.floor(canvas.width / fontSize)
+      columns.fill(0) // Inicializa todas as colunas no topo
+      ctx.font = `${fontSize}px monospace`
     }
 
     /** Desenha um quadro da animação */
@@ -42,7 +34,7 @@ export function MatrixBackground() {
       ctx.fillStyle = "rgba(0,0,0,0.05)" // Opacidade baixa para um rastro sutil
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-      ctx.fillStyle = "#00FF00" // Cor verde do WhatsApp, definida no tailwind.config.ts
+      ctx.fillStyle = "#00BFFF" // Blue color, matching the whatsappGreen variable in tailwind.config.ts
 
       for (let i = 0; i < columns.length; i++) {
         const text = characters[Math.floor(Math.random() * characters.length)] // Caractere aleatório (0 ou 1)

@@ -3,6 +3,8 @@
 import { Zap, BarChart2, Brain, Cloud, LifeBuoy, ArrowRight, Heart } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { MatrixBackground } from "@/components/matrix-background" // Importar o novo componente de fundo
+import { ScarcityBar } from "@/components/scarcity-bar" // Importar a barra de escassez
+import { LiveActivity } from "@/components/live-activity"
 
 import { Button, Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui"
 
@@ -12,12 +14,20 @@ export default function UpsellPage() {
   const { ref: featuresRef, isVisible: isFeaturesVisible } = useScrollReveal()
   const { ref: ctaRef, isVisible: isCtaVisible } = useScrollReveal()
 
+  const handleCheckoutRedirect = () => {
+    window.open("https://checkoutpremium.netlify.app/", "_blank")
+  }
+
   return (
     <div className="relative flex min-h-screen flex-col text-white font-sans">
+      {/* Barra de escassez */}
+      <ScarcityBar />
+
       {/* Fundo de Matrix dinâmico */}
       <MatrixBackground />
+
       {/* Conteúdo principal */}
-      <main className="relative z-10 mx-auto w-full max-w-6xl flex-1 px-4 pt-20 pb-14 lg:px-8">
+      <main className="relative z-10 mx-auto w-full max-w-6xl flex-1 px-4 pt-32 pb-14 lg:px-8">
         {/* HERO */}
         <section
           ref={heroRef}
@@ -38,23 +48,20 @@ export default function UpsellPage() {
           </p>
           {/* Novo texto persuasivo */}
           <p className="mx-auto mb-8 max-w-2xl text-xl font-semibold text-upgradeBlue">
-            Por apenas <span className="text-white">R$9,90</span>, você garante acesso ilimitado a todos os recursos
+            Por apenas <span className="text-white">R$19,90</span>, você garante acesso ilimitado a todos os recursos
             Premium e descobre a verdade que você procura!
           </p>
           {/* CTA PRINCIPAL */}
-          <a
-            href="https://checkoutpremium.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            size="lg"
+            onClick={handleCheckoutRedirect}
+            className="rounded-full bg-upgradeBlue px-10 py-6 text-xl font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-blue-500 whitespace-nowrap cursor-pointer"
           >
-            <Button
-              size="lg"
-              className="rounded-full bg-upgradeBlue px-10 py-6 text-xl font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-blue-500 whitespace-nowrap"
-            >
-              <Heart className="mr-3 h-6 w-6 fill-current" />
-              ATUALIZAR AGORA!
-            </Button>
-          </a>
+            <Heart className="mr-3 h-6 w-6 fill-current" />
+            ATUALIZAR AGORA!
+          </Button>
+          {/* Live Activity Simulation */}
+          <LiveActivity />
         </section>
         {/* FEATURES */}
         <section
@@ -87,24 +94,20 @@ export default function UpsellPage() {
           }`}
         >
           <h3 className="mb-6 text-3xl font-bold text-glow animate-pulse-glow">
-            CHEGA DE DÚVIDAS! A VERDADE CUSTA APENAS R$9,90.
+            CHEGA DE DÚVIDAS! A VERDADE CUSTA APENAS R$19,90.
           </h3>
           <p className="mx-auto mb-10 max-w-xl text-lg">
             Não perca mais tempo na escuridão. Desvende cada segredo, cada conversa, cada movimento. Com o PREMIUM é a
-            sua ÚNICA chance de ter o controle total e a paz que só a verdade pode trazer. Garanta agora!
+            sua ÚNICA chance de ter o controle total e a paz que só a verdade pode trazer. Garante agora!
           </p>
-          <a
-            href="https://checkoutpremium.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            size="lg"
+            onClick={handleCheckoutRedirect}
+            className="rounded-full bg-upgradeBlue px-6 py-6 text-xl font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-blue-500 whitespace-nowrap cursor-pointer"
           >
-            <Button
-              size="lg"
-              className="rounded-full bg-upgradeBlue px-6 py-6 text-xl font-bold text-black shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-blue-500 whitespace-nowrap"
-            >
-              GARANTIR POR R$9,90 AGORA!
-            </Button>
-          </a>
+            GARANTIR POR R$19,90 AGORA!
+          </Button>
+          <p className="mt-4 text-lg font-bold text-upgradeBlue animate-pulse">⚠️ Garanta agora antes que acabe! ⚠️</p>
         </section>
       </main>
     </div>
@@ -136,8 +139,8 @@ const features = [
     icon: <Cloud className="h-10 w-10 text-upgradeBlue" />,
   },
   {
-    title: "Modo espião Seguro",
-    desc: "Se passe por ele e mantenha tudo em controle.",
+    title: "Suporte Prioritário 24/7",
+    desc: "Fale diretamente com nossa equipe sempre que precisar, sem filas.",
     icon: <LifeBuoy className="h-10 w-10 text-upgradeBlue" />,
   },
   {

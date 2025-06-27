@@ -64,7 +64,7 @@ const config: Config = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        whatsappGreen: "#00FF00", // Mantido para o código binário e referência
+        whatsappGreen: "#00BFFF", // Blue color for matrix effect and references
         upgradeBlue: "#00BFFF", // Um azul vibrante para o upgrade
       },
       borderRadius: {
@@ -109,10 +109,10 @@ const config: Config = {
         },
         "pulse-icon-glow": {
           "0%, 100%": {
-            filter: "drop-shadow(0 0 1px var(--tw-shadow-color))", // Usar drop-shadow para ícones
+            boxShadow: "0 0 1px 0px var(--tw-shadow-color)", // Brilho muito sutil
           },
           "50%": {
-            filter: "drop-shadow(0 0 4px var(--tw-shadow-color))", // Usar drop-shadow para ícones
+            boxShadow: "0 0 4px 2px var(--tw-shadow-color)", // Brilho um pouco mais forte
           },
         },
         "fade-in-up": {
@@ -160,7 +160,6 @@ const config: Config = {
         },
         ".icon-glow": {
           "--tw-shadow-color": theme("colors.upgradeBlue"), // Define a cor da sombra para o brilho do ícone
-          // Não precisamos de filter aqui, pois a animação já aplica
         },
       }
       addUtilities(newUtilities, ["responsive", "hover"])
