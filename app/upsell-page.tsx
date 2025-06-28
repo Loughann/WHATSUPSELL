@@ -2,9 +2,10 @@
 
 import { Zap, BarChart2, Brain, Cloud, LifeBuoy, ArrowRight, Heart } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { MatrixBackground } from "@/components/matrix-background" // Importar o novo componente de fundo
 import { ScarcityBar } from "@/components/scarcity-bar" // Importar a barra de escassez
-import { LiveActivity } from "@/components/live-activity"
+import { LiveNotifications } from "@/components/live-notifications"
+import { PageActivity } from "@/components/page-activity"
+import { UpgradeBackground } from "@/components/upgrade-background" // Novo fundo animado
 
 import { Button, Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui"
 
@@ -23,8 +24,11 @@ export default function UpsellPage() {
       {/* Barra de escassez */}
       <ScarcityBar />
 
-      {/* Fundo de Matrix dinâmico */}
-      <MatrixBackground />
+      {/* Fundo animado de upgrade */}
+      <UpgradeBackground />
+
+      {/* Notificações ao vivo */}
+      <LiveNotifications />
 
       {/* Conteúdo principal */}
       <main className="relative z-10 mx-auto w-full max-w-6xl flex-1 px-4 pt-32 pb-14 lg:px-8">
@@ -60,8 +64,8 @@ export default function UpsellPage() {
             <Heart className="mr-3 h-6 w-6 fill-current" />
             ATUALIZAR AGORA!
           </Button>
-          {/* Live Activity Simulation */}
-          <LiveActivity />
+          {/* Simulação de pessoas na página */}
+          <PageActivity />
         </section>
         {/* FEATURES */}
         <section
