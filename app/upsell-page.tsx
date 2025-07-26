@@ -16,7 +16,7 @@ export default function UpsellPage() {
   const { ref: ctaRef, isVisible: isCtaVisible } = useScrollReveal()
 
   const handleCheckoutRedirect = () => {
-    window.open("https://checkoutpremium.netlify.app/", "_blank")
+    window.open("https://pay.cakto.com.br/pg3cspr_487909", "_blank")
   }
 
   return (
@@ -41,11 +41,11 @@ export default function UpsellPage() {
         >
           <div className="mb-6 flex items-center justify-center gap-4 text-upgradeBlue">
             <h1 className="text-4-5xl font-extrabold tracking-tight text-glow animate-pulse-glow">
-              ESPIÃO&nbsp;PREMIUM
+              VERSÃO&nbsp;PREMIUM
             </h1>{" "}
             {/* Adicionado animate-pulse-glow */}
           </div>
-          <h2 className="mb-4 text-4xl font-bold">Desbloqueie o Próximo Nível de Investigação do WhatsApp</h2>
+          <h2 className="mb-4 text-4xl font-bold">Desbloqueie o Próximo Nível do seu Relatório AGORA mesmo!</h2>
           <p className="mx-auto mb-10 max-w-3xl text-lg">
             Leve sua análise de dados para o futuro com monitoramento em tempo real, relatórios super avançados e
             inteligência artificial integrada para identificar todos tipos de comportamentos suspeitos.
@@ -53,7 +53,7 @@ export default function UpsellPage() {
           {/* Novo texto persuasivo */}
           <p className="mx-auto mb-8 max-w-2xl text-xl font-semibold text-upgradeBlue">
             Por apenas <span className="text-white">R$19,90</span>, você garante acesso ilimitado a todos os recursos
-            Premium e descobre a verdade que você procura!
+            Premium e descobre a toda verdade que você procura!
           </p>
           {/* CTA PRINCIPAL */}
           <Button
@@ -111,7 +111,7 @@ export default function UpsellPage() {
           >
             GARANTIR POR R$19,90 AGORA!
           </Button>
-          <p className="mt-4 text-lg font-bold text-upgradeBlue animate-pulse">⚠️ Garanta agora antes que acabe! ⚠️</p>
+          <p className="mt-4 text-lg font-bold text-upgradeBlue animate-pulse">⚠️VAI CONTINUAR SENDO TROUXA ATÉ QUANDO?⚠️</p>
         </section>
       </main>
     </div>

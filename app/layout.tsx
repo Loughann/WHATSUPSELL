@@ -4,8 +4,8 @@ import "./globals.css"
 import Script from "next/script"
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "Premium Version",
+  description: "Premium Version",
   generator: "v0.dev",
 }
 
